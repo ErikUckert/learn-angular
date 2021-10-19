@@ -15,10 +15,9 @@ import { CoursesService } from "./courses.service";
 
 export class CoursesComponent {
     title = "List of Courses"
-    courses = ["course1", "course2", "course3"]
+    courses; // = ["course1", "course2", "course3"]
 
-    constructor() {
-        let service = new CoursesService();
+    constructor(service: CoursesService) {
         this.courses = service.getCourses();
     }
 
